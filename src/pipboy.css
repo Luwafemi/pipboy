@@ -1,0 +1,384 @@
+/* *{
+  outline: 1px solid purple;
+} */
+@font-face {
+  font-family: Pipboy;
+  src: url("./monofonto.ttf");
+}
+
+body {
+  color: #14fe17;
+  background-color: #272b23;
+  font-family: Pipboy, sans-serif;
+}
+
+html::after,
+body::after {
+  content: "";
+  height: 300%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: 0.3;
+  z-index: 20000;
+  pointer-events: none;
+}
+
+.sidenav1 {
+  z-index: 1000;
+  background: #384138f6;
+  top: 04px;
+  height: 99%;
+  width: 200px;
+  padding-left: 10px;
+  display: none;
+}
+.sidenav {
+  background: #384138f6;
+  z-index: 1000;
+  top: 04px;
+  /* height: 100%; */
+  width: 200px;
+  padding-left: 10px;
+}
+.sidenav li {
+  margin-top: 35px;
+}
+.boo {
+  width: 274px;
+}
+
+.navbar {
+  border-bottom: 2px solid;
+  margin: 0px 10px;
+}
+
+.navbar::before,
+.navbar::after {
+  height: 7px;
+  width: 2px;
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #14fe17;
+  bottom: -8px;
+}
+
+.navbar::before {
+  left: 0px;
+}
+
+.navbar::after {
+  right: 0px;
+}
+
+a {
+  color: #14fe17;
+}
+.center-image img {
+  margin: auto;
+  display: block;
+  position: relative;
+  max-height: 250px;
+  /* margin-top: 60px; */
+  filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(7) brightness(1)
+    contrast(2);
+}
+
+.pic img {
+  filter: grayscale(1) brightness(200) contrast(0) sepia(100%) hue-rotate(55deg)
+    saturate(20);
+}
+.box {
+  height: 60px;
+  width: 40px;
+}
+
+#pipboy img {
+  height: 200px;
+  width: 200px;
+}
+
+.pip-footer {
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  /* margin: 10px; */
+}
+
+a:hover {
+  color: #14fe17;
+}
+
+.nav-link.active {
+  color: #14fe17 !important;
+}
+
+.b {
+  margin-left: 20px;
+  margin-right: 32px;
+  font-size: 20px;
+}
+#c {
+  height: 11px;
+  width: 120px;
+  top: 25px;
+  left: 124px;
+  position: absolute;
+  border: 2px solid #14fe17;
+  border-bottom: 2px solid #272b23;
+  border-bottom: none;
+  z-index: -2;
+}
+
+#d {
+  width: 116px;
+  height: 2px;
+  background-color: #272b23;
+  top: 34px;
+  left: 126px;
+  position: absolute;
+}
+
+#c2 {
+  height: 11px;
+  width: 120px;
+  top: 25px;
+  left: 236px;
+  position: absolute;
+  border: 2px solid #14fe17;
+  border-bottom: 2px solid #272b23;
+  border-bottom: none;
+  z-index: -2;
+}
+
+#d2 {
+  width: 116px;
+  height: 2px;
+  background-color: #272b23;
+  top: 34px;
+  left: 238px;
+  position: absolute;
+}
+
+nav.navbar.navbar-expand-lg {
+  padding-bottom: 0px;
+}
+
+.level-progress {
+  width: 500px;
+  height: 10px;
+  border: 2px solid #14fe17;
+}
+
+.level-progress-mini {
+  width: 20px;
+  height: 6px;
+  border: 1px solid #14fe17;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.box {
+  background-color: hsla(121, 94%, 26%, 0.258);
+  border: 1px solid #272b23;
+  padding: 0px;
+  /* width: 1%; */
+}
+
+.weapons {
+  list-style: none;
+  margin-top: 20px;
+  width: 240px;
+  padding-left: 0px;
+  margin-left: 15px;
+}
+
+.weapons a {
+  display: inline-block;
+  width: 240px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: monospace;
+  padding-left: 12px;
+}
+
+.weapons a:hover {
+  background-color: #14fe17;
+  color: #272b23;
+  padding-left: 3px;
+}
+
+.weapons_stats {
+  list-style: none;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: monospace;
+  text-align: left;
+  position: absolute;
+  bottom: 69px;
+  right: 20px;
+  display: none;
+}
+
+.weapons_stats div {
+  background-color: hsla(121, 94%, 26%, 0.258);
+  color: #14fe17;
+  margin-bottom: 2px;
+}
+
+.weapons_stats div span:first-child {
+  display: inline-block;
+  width: 180px;
+  margin-left: 5px;
+}
+
+.weapons_stats div span:nth-child(2) {
+  text-align: right;
+  display: inline-block;
+  width: 50px;
+  padding-right: 6px;
+}
+
+.weapons a.active::before {
+  content: "";
+  position: absolute;
+  left: 17px;
+  height: 6px;
+  width: 6px;
+  background-color: #14fe17;
+  margin-top: 10px;
+}
+
+.weapons a.active:hover::before {
+  background-color: #272b23;
+}
+
+.weapons a.active {
+  padding-left: 12px;
+}
+#crosshair,
+#lightning,
+#radiation {
+  width: 18px !important;
+}
+#radiation {
+  width: 16px !important;
+  margin-bottom: 3px;
+}
+.navbar-toggler {
+  outline: none !important;
+}
+
+/* .........................................................MEDIA QUERIES........................................................................... */
+@media (min-width: 550px) {
+  .boo {
+    width: 400px;
+  }
+  .box.pic.aa {
+    width: 50px !important;
+  }
+  .box.pic {
+    width: 100px !important;
+  }
+
+  #pistol {
+    width: 50% !important;
+    margin-top: 12px !important;
+  }
+  #helment {
+    width: 90% !important;
+    margin-top: 4px !important;
+    margin-left: 9px !important;
+  }
+}
+@media (min-width: 499px) {
+  .boo {
+    margin-top: -5px !important;
+  }
+}
+@media (min-width: 899px) {
+  .boo {
+    margin-top: 30px !important;
+  }
+}
+
+/* .................................................................................................................................................. */
+@media (max-width: 499px) {
+  .pip-footer {
+    position: relative !important;
+  }
+}
+
+@media (max-width: 800px) and (max-height: 400px) {
+  .pip-footer {
+    position: relative !important;
+  }
+  .weapons {
+    margin-bottom: 70px;
+  }
+  .woo {
+    height: 100px !important;
+  }
+  .weapons_stats {
+    top: 170px;
+  }
+  /* html::after,
+  body::after {
+    content: "";
+    height: 300%;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: repeating-linear-gradient(
+      10deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.4) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    opacity: 0.3;
+    z-index: 20000;
+    pointer-events: none; */
+  /* } */
+}
+
+@media (max-width: 768px) {
+  .level-progress {
+    width: 79% !important;
+  }
+  .weapons_stats {
+    margin-bottom: 35px;
+    margin-right: -12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .bars {
+    margin: 5px 0px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 408px) {
+  .nav {
+    margin-left: 40px !important;
+  }
+}
+@media (max-width: 370px) {
+  .boo {
+    margin-top: 20px !important;
+    margin-bottom: 7px !important;
+  }
+}
